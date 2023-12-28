@@ -1,6 +1,6 @@
-﻿namespace Eventsense.Business.Model;
+﻿namespace Eventsense.DTOs.Event;
 
-public class Event : IEntity, IDeleteEntity, IActivityTrackEntity
+public class Event
 {
     public int Id { get; set; }
     public string Title { get; set; }

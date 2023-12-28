@@ -48,6 +48,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
 
 builder.Services.AddScoped<IGuestsServices, GuestsService>();
+builder.Services.AddScoped<IEventsService, EventsService>();
 
 builder.Services.AddControllers();
 

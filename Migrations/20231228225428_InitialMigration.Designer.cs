@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eventsense.Migrations
 {
     [DbContext(typeof(EventSenseDataContext))]
-    [Migration("20231228081407_InitialMigration")]
+    [Migration("20231228225428_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace Eventsense.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Eventsense.Event", b =>
+            modelBuilder.Entity("Eventsense.Business.Model.Event", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -39,8 +39,8 @@ namespace Eventsense.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CreatedByUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("CreatedByUserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedByUserName")
                         .HasColumnType("nvarchar(max)");
@@ -66,11 +66,11 @@ namespace Eventsense.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UpdatedByUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UpdatedByUserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UpdatedByUserName")
                         .HasColumnType("nvarchar(max)");
@@ -80,7 +80,7 @@ namespace Eventsense.Migrations
                     b.ToTable("Events");
                 });
 
-            modelBuilder.Entity("Eventsense.Guest", b =>
+            modelBuilder.Entity("Eventsense.Business.Model.Guest", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
