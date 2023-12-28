@@ -1,0 +1,6 @@
+@Eventsense_HostAddress = http://localhost:5173
+
+GET {{Eventsense_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
