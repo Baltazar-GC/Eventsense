@@ -8,6 +8,7 @@ namespace WebStarted.HR.API.DTOs.Mappers
         public static void Register(IMapperConfigurationExpression cfg)
         {
             cfg.AddProfile<GuestProfile>();
+            cfg.AddProfile<EventProfile>();
         }
     }
 }
